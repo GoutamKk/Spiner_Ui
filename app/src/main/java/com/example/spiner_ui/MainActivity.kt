@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             update.setOnClickListener {
-                if(edit.text.isNotEmpty() ){
+                if(edit.text.isNotEmpty() && array.size>0 ){
                     array[pos] = edit.text.toString()
                     arrayAdapter.notifyDataSetChanged()
                     edit.text.clear()
@@ -105,6 +105,10 @@ class MainActivity : AppCompatActivity() {
             cancl.setOnClickListener {
                 dialog.dismiss()
             }
+        }
+        binding.listButon.setOnClickListener {
+            val intent = Intent(this,MainActivity3::class.java)
+            startActivity(intent)
         }
 
     }
